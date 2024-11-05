@@ -1,0 +1,5 @@
+rootProject.name = 'wpic_template'
+include ':app'
+include ':domain'
+include ':data'
+include ':presentation'

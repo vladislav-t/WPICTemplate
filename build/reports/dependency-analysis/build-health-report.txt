@@ -1,0 +1,129 @@
+Advice for :app
+Unused dependencies which should be removed:
+  androidTestImplementation("androidx.test.espresso:espresso-core:3.5.0")
+  debugImplementation("com.squareup.leakcanary:leakcanary-android:2.14")
+  implementation("androidx.core:core-ktx:1.12.0")
+  implementation("androidx.datastore:datastore-preferences:1.0.0")
+  implementation("androidx.fragment:fragment-ktx:1.5.2")
+  implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
+  implementation(project(":data"))
+  implementation(project(":domain"))
+  testImplementation("junit:junit:4.13.2")
+
+These transitive dependencies should be declared directly:
+  implementation("androidx.annotation:annotation:1.8.0")
+  implementation("androidx.appcompat:appcompat:1.4.1")
+  implementation("androidx.fragment:fragment:1.5.2")
+  implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.1")
+  implementation("com.google.dagger:dagger:2.51.1")
+  implementation("com.google.dagger:hilt-core:2.51.1")
+  implementation("com.google.errorprone:error_prone_annotations:2.27.0")
+  implementation("javax.inject:javax.inject:1")
+  kapt("com.google.dagger:dagger-compiler:2.51.1")
+
+Dependencies which should be removed or changed to runtime-only:
+  androidTestRuntimeOnly("androidx.test:runner:1.5.0") (was androidTestImplementation)
+  runtimeOnly("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1") (was implementation)
+
+Advice for :data
+Unused dependencies which should be removed:
+  api("com.squareup.retrofit2:converter-gson:2.9.0")
+  implementation("androidx.core:core-ktx:1.9.0")
+  implementation("androidx.multidex:multidex:2.0.1")
+  implementation("com.google.android.material:material:1.6.0-alpha03")
+  implementation("com.google.code.gson:gson:2.11.0")
+  implementation("com.google.dagger:hilt-android:2.51.1")
+  implementation("com.jakewharton.timber:timber:5.0.1")
+  implementation(project(":domain"))
+  testImplementation("androidx.arch.core:core-testing:2.1.0")
+  testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0")
+  testImplementation("junit:junit:4.13.2")
+  testImplementation("org.mockito:mockito-core:5.12.0")
+  testImplementation(project(":domain"))
+
+Unused annotation processors that should be removed:
+  kapt("com.google.dagger:hilt-compiler:2.51.1")
+
+Unused plugins that can be removed:
+  kotlin-kapt: this project has the kotlin-kapt (org.jetbrains.kotlin.kapt) plugin applied, but there are no used annotation processors.
+
+Module structure advice
+This project uses limited Android features and could be a JVM project.
+* Has Android library dependencies.
+
+Advice for :domain
+Unused dependencies which should be removed:
+  implementation("androidx.lifecycle:lifecycle-livedata:2.8.1")
+  implementation("androidx.multidex:multidex:2.0.1")
+  implementation("com.google.dagger:hilt-android:2.51.1")
+  testImplementation("androidx.arch.core:core-testing:2.1.0")
+  testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0")
+  testImplementation("junit:junit:4.13.2")
+  testImplementation("org.mockito:mockito-core:5.12.0")
+
+Unused annotation processors that should be removed:
+  kapt("com.google.dagger:hilt-compiler:2.51.1")
+
+Unused plugins that can be removed:
+  kotlin-kapt: this project has the kotlin-kapt (org.jetbrains.kotlin.kapt) plugin applied, but there are no used annotation processors.
+
+Module structure advice
+This project uses limited Android features and could be a JVM project.
+* Has Android library dependencies.
+
+Advice for :presentation
+Unused dependencies which should be removed:
+  androidTestImplementation("androidx.test.espresso:espresso-core:3.5.0")
+  androidTestImplementation("androidx.test.ext:junit:1.1.3")
+  androidTestImplementation("androidx.test:rules:1.5.0")
+  implementation("androidx.fragment:fragment-ktx:1.5.2")
+  implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
+  implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.8.1")
+  implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.1")
+  implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.1")
+  implementation("androidx.multidex:multidex:2.0.1")
+  implementation("androidx.navigation:navigation-fragment-ktx:2.5.2")
+  implementation("androidx.navigation:navigation-ui-ktx:2.5.2")
+  implementation("androidx.paging:paging-runtime-ktx:3.3.0")
+  implementation("com.google.android.material:material:1.6.0-alpha03")
+  implementation("com.jakewharton.timber:timber:5.0.1")
+  testImplementation("androidx.arch.core:core-testing:2.1.0")
+  testImplementation(project(":domain"))
+
+These transitive dependencies should be declared directly:
+  api("androidx.coordinatorlayout:coordinatorlayout:1.1.0")
+  api("androidx.datastore:datastore-preferences-core:1.0.0")
+  api("androidx.fragment:fragment:1.5.2")
+  api("androidx.lifecycle:lifecycle-common:2.8.1")
+  api("androidx.lifecycle:lifecycle-livedata-core:2.8.1")
+  api("androidx.lifecycle:lifecycle-viewmodel:2.8.1")
+  api("androidx.paging:paging-common:3.3.0")
+  api("androidx.paging:paging-runtime:3.3.0")
+  api("com.google.dagger:dagger:2.51.1")
+  api("com.google.dagger:hilt-core:2.51.1")
+  api("javax.inject:javax.inject:1")
+  api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1")
+  implementation("androidx.activity:activity:1.7.0")
+  implementation("androidx.annotation:annotation:1.8.0")
+  implementation("androidx.appcompat:appcompat-resources:1.4.1")
+  implementation("androidx.core:core:1.12.0")
+  implementation("androidx.datastore:datastore-core:1.0.0")
+  implementation("androidx.lifecycle:lifecycle-runtime:2.8.1")
+  implementation("androidx.navigation:navigation-runtime:2.5.2")
+  implementation("com.github.bumptech.glide:annotations:4.16.0")
+  kapt("com.google.dagger:dagger-compiler:2.51.1")
+
+Existing dependencies which should be modified to be as indicated:
+  api("androidx.appcompat:appcompat:1.4.1") (was implementation)
+  api("androidx.constraintlayout:constraintlayout:2.1.4") (was implementation)
+  api("androidx.recyclerview:recyclerview:1.3.2") (was implementation)
+  api("com.github.bumptech.glide:glide:4.16.0") (was implementation)
+  api("com.google.dagger:hilt-android:2.51.1") (was implementation)
+  api(project(":domain")) (was implementation)
+
+Dependencies which should be removed or changed to runtime-only:
+  androidTestRuntimeOnly("androidx.test:core:1.5.0") (was androidTestImplementation)
+  androidTestRuntimeOnly("androidx.test:runner:1.5.0") (was androidTestImplementation)
+  runtimeOnly("org.jetbrains.kotlin:kotlin-reflect:2.0.0") (was implementation)
+  runtimeOnly("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1") (was implementation)
+
